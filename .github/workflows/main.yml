@@ -32,8 +32,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      # - name: Build
-      #   run: hugo --minify
+      - name: Build
+        run: hugo --minify
 
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
