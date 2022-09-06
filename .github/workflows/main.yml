@@ -24,15 +24,16 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - uses: actions/cache@v2
+      - name: Cache hugo modules
+        uses: actions/cache@v2
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: Build
-        run: hugo --minify
+      # - name: Build
+      #   run: hugo --minify
 
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
