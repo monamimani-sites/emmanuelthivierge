@@ -1,0 +1,4 @@
+baseURL = 'http://emmanuelthivierge.com/'
+languageCode = 'en-us'
+title = 'Emmanuel thivierge'
+theme = "ananke"
