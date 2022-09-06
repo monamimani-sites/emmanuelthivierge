@@ -9,7 +9,8 @@ on:
       - master
 
 jobs:
-  test:
+  build-test:
+    name: Build using Hugo and Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +40,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
-          build: npm run build
-          start: npm start
           wait-on: http://localhost:1313
           browser: chrome
