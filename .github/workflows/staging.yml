@@ -1,9 +1,9 @@
-name: Main
+name: Staging
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-deploy:
@@ -39,4 +39,4 @@ jobs:
         run: npx netlify-cli deploy --prod --dir=_build
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.STAGING_NETLIFY_SITE_ID }}
