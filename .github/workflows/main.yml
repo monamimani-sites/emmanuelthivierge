@@ -33,10 +33,10 @@ jobs:
             ${{ runner.os }}-hugomod-
 
       - name: Build
-        run: hugo --minify
+        run: hugo --destination="_build" --minify --cleanDestinationDir
 
       - name: Deploy to netlify
-        run: npx netlify-cli deploy --build --prod --dir=build
+        run: npx netlify-cli deploy --build --prod --dir=_build
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
