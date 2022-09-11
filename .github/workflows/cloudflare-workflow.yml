@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - staging
+      - production
 
 jobs:
   build-deploy:
-    name: Build using Hugo and Deploy to Netlify
+    name: Build using Hugo and Deploy to Cloudflare
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
