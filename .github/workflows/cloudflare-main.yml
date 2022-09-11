@@ -36,12 +36,11 @@ jobs:
       - name: Build
         run: hugo --destination="_build" --minify --cleanDestinationDir
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@1
+      - name: Publish to Cloudflare Pages using wrangler
+        uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: emmanuelthivierge
+          ommand: pages publish --project-name=emmanuelthivierge --branch="dev"
           directory: "_build"
-          branches: "dev"
