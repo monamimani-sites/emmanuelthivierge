@@ -20,18 +20,18 @@ jobs:
     needs: checkout
     uses: monamimani-sites/emmanuelthivierge/.github/workflows/BuildHugo.yml
 
-  deploy:
-    name: Deploy to Cloudflare
-    needs: build
-    runs-on: ubuntu-latest
+  # deploy:
+  #   name: Deploy to Cloudflare
+  #   needs: build
+  #   runs-on: ubuntu-latest
       
-    steps:
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: "emmanuelthivierge"
-          directory: "_build"
-          branch: "dev"
+  #   steps:
+  #     - name: Publish to Cloudflare Pages
+  #       uses: cloudflare/pages-action@1
+  #       with:
+  #         apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
+  #         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  #         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+  #         projectName: "emmanuelthivierge"
+  #         directory: "_build"
+  #         branch: "dev"
