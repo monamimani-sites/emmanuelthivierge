@@ -43,4 +43,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           command: pages publish --project-name=emmanuelthivierge --branch="staging"
-          workingDirectory: "_build"
+          directory: "_build"
