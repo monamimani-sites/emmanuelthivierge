@@ -18,7 +18,7 @@ jobs:
   build:
     name: Hugo Build
     needs: checkout
-    uses: monamimani-sites/emmanuelthivierge/.github/workflows/BuildHugo.yml@v1 
+    uses: monamimani-sites/emmanuelthivierge/.github/workflows/BuildHugo.yml
 
   deploy:
     name: Deploy to Cloudflare
