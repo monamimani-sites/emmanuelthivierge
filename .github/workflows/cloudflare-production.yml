@@ -1,4 +1,4 @@
-name: CloudFlare-Main
+name: CloudFlare-Production
 
 on:
   push:
