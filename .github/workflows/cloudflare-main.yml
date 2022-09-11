@@ -20,7 +20,7 @@ jobs:
           submodules: true
       
       - name: Hugo Build
-        uses: monamimani-sites/emmanuelthivierge/.github/workflows/BuildHugo.yml
+        uses: monamimani-sites/emmanuelthivierge/.github/workflows/BuildHugo.yml@v1
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
