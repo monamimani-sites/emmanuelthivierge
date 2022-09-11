@@ -42,5 +42,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          ommand: pages publish --project-name=emmanuelthivierge --branch="staging"
-          directory: "_build"
+          command: pages publish --project-name=emmanuelthivierge --branch="staging"
+          workingDirectory: "_build"
