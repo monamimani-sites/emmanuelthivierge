@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      - staging
-      - production
 
 jobs:
   build-deploy:
@@ -43,6 +41,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: emmanuelthivierge
-          directory: "_build"
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: "emmanuelthivierge"
+          directory: "_build"
+          branch: "dev"
