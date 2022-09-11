@@ -19,22 +19,8 @@ jobs:
           lfs: true
           submodules: true
       
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
-
-      - name: Cache hugo modules
-        uses: actions/cache@v2
-        with:
-          path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-
-
-      - name: Build
-        run: hugo --destination="_build" --minify --cleanDestinationDir
+      - name: Hugo Build
+        uses: monamimani-sites/emmanuelthivierge/.github/workflows/BuildHugo.yml
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
