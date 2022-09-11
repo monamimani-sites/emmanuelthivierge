@@ -41,7 +41,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           projectName: "emmanuelthivierge"
           directory: "_build"
           branch: "dev"
