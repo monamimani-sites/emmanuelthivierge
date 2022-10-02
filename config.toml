@@ -1,4 +1,205 @@
-baseURL = 'http://emmanuelthivierge.com/'
-languageCode = 'en-us'
 title = 'Emmanuel thivierge'
+baseURL = 'http://emmanuelthivierge.com/'
+
+disableKinds = ["section", "taxonomy", "term", "RSS"]
+
 theme = "LoveIt"
+
+defaultContentLanguage = "en"
+languageCode = "en"
+languageName = "English"
+
+# google analytics code [UA-XXXXXXXX-X]
+googleAnalytics = ""
+# copyright description used only for seo schema
+copyright = ""
+
+# whether to use robots.txt
+enableRobotsTXT = true
+
+# whether to use emoji code
+enableEmoji = true
+
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "about"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "About"
+    url = "/about/"
+    # title will be shown when you hover on this menu link
+    title = "about me"
+
+
+[params]
+    defaultTheme = "auto"
+    # website title for Open Graph and Twitter Cards
+    title = "Emmanuel Thivierge | Personal website"
+    # website description for RSS, SEO, Open Graph and Twitter Cards
+    description = "Emmanuel Thivierge | Creative engineering; This site contains the writings of my journey from a C++ 3D graphics programmer to a creative coder that use code to create interactive and immersive experiences and installations."
+    # website images for Open Graph and Twitter Cards
+    images = ["/logo.png"]
+    
+    # Header config
+    [params.header]
+        # desktop header mode ["fixed", "normal", "auto"]
+        desktopMode = "fixed"
+        # mobile header mode ["fixed", "normal", "auto"]
+        mobileMode = "auto"
+        # Header title config
+        [params.header.title]
+            # URL of the LOGO
+            logo = ""
+            # title name
+            name = "Emmanuel Thivierge  | Personal website"
+            # you can add extra information before the name (HTML format is supported), such as icons
+            pre = "<i class='far fa-solid fa-code' aria-hidden='true'></i>"
+            # you can add extra information after the name (HTML format is supported), such as icons
+            post = "<i class='fa-solid fa-code-merge'></i>"
+            # whether to use typeit animation for title name
+            typeit = false
+
+    # Footer config
+    [params.footer]
+        enable = true
+        # Custom content (HTML format is supported)
+        custom = ""
+        # whether to show Hugo and theme info
+        hugo = true
+        # whether to show copyright info
+        copyright = true
+        # whether to show the author
+        author = true
+        # site creation time
+        since = 2019
+        # ICP info only in China (HTML format is supported)
+        icp = ""
+        # license info (HTML format is supported)
+        license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+    # Section (all posts) page config
+    [params.section]
+        # special amount of posts in each section page
+        paginate = 20
+        # date format (month and day)
+        dateFormat = "01-02"
+        # amount of RSS pages
+        rss = 10
+
+    # List (category or tag) page config
+    [params.list]
+        # special amount of posts in each list page
+        paginate = 20
+        # date format (month and day)
+        dateFormat = "01-02"
+        # amount of RSS pages
+        rss = 10
+
+
+  # App icon config
+  [params.app]
+    # optional site title override for the app when added to an iOS home screen or Android launcher
+    title = "Emmanuel Thivierge | Personal website"
+    # whether to omit favicon resource links
+    noFavicon = false
+    # modern SVG favicon to use in place of older style .png and .ico files
+    svgFavicon = ""
+    # Android browser theme color
+    themeColor = "#ffffff"
+    # Safari mask icon color
+    iconColor = "#5bbad5"
+    # Windows v8-11 tile color
+    tileColor = "#da532c"
+
+  # Search config
+  [params.search]
+    enable = false
+
+  # Home page config
+  [params.home]
+    # amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      avatarURL = "/images/avatar.webp"
+      # title shown in home page (HTML format is supported)
+      title = "Programmer"
+      # subtitle shown in home page (HTML format is supported)
+      subtitle = "Remote C++ Software Contractor ⁜ Unreal developer ⁜ Real-time, interactive, immersive software in new media."
+      # whether to use typeit animation for subtitle
+      typeit = false
+      # whether to show social links
+      social = true
+      # disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = false
+      # special amount of posts in each home posts page
+      paginate = 6
+
+  # Social config in home page
+  [params.social]
+    GitHub = "monamimani"
+    Linkedin = "emmanuelthivierge"
+    Twitter = ""
+    Instagram = ""
+    Keybase = ""
+    Stackoverflow = "994652/monamimani"
+    Patreon = ""
+    Angellist = "emmanuel-thivierge"
+
+  # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
+  [params.verification]
+    google = ""
+    bing = ""
+    yandex = ""
+    pinterest = ""
+    baidu = ""
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      unsafe = true
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# Sitemap config
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
+[Permalinks]
+  # posts = ":year/:month/:filename"
+  posts = ":filename"
