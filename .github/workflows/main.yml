@@ -1,4 +1,4 @@
-name: Main
+name: CloudFlare-Main
 
 on:
   push:
@@ -6,19 +6,14 @@ on:
       - main
 
 jobs:
-  build-deploy:
-    name: Build using Hugo and Deploy to Netlify
-    runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  checkout-build-deploy:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
         with:
           lfs: true
           submodules: true
-      
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -36,8 +31,12 @@ jobs:
       - name: Build
         run: hugo --destination="_build" --minify --cleanDestinationDir
 
-      - name: Deploy to netlify
-        run: npx netlify-cli deploy --prod --dir=_build
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: "emmanuelthivierge"
+          directory: "_build"
+          branch: "dev"
