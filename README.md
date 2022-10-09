@@ -1,4 +1,6 @@
 # Emmanuel Thivierge web site
 
-[![Main](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/main.yml/badge.svg)](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/main.yml)
-[![Staging](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/staging.yml/badge.svg)](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/staging.yml)
+[![CloudFlare-Dev](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/dev.yml/badge.svg?branch=dev)](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/dev.yml)
+[![CloudFlare-Production](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/production.yml/badge.svg?branch=production)](https://github.com/monamimani-sites/emmanuelthivierge/actions/workflows/production.yml)
+
+[Production site](https://emmanuelthivierge.com)
