@@ -1,6 +1,9 @@
 name: CloudFlare-Production
 
 on:
+  workflow_dispatch:
+    branches:
+      - production
   push:
     branches:
       - production
